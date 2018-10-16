@@ -13,6 +13,7 @@
 \usepackage{tikz}
 \usepackage{color,soul}
 \usepackage{amsfonts}
+\usepackage{bm}
 \usepackage{dot2texi}
 \newtheorem{teo}{Teorema}[chapter]
 \newtheorem{cor}{Corolario}[chapter]
@@ -23,9 +24,10 @@
 \newtheorem{Restriccion}{Restricción}
 \newtheorem{Problema}{Problema}
 \newtheorem{dem}{Demostracion}
-\usepackage[chapter]{algorithm}
-\usepackage{algorithmic}
-\input{spanishAlgorithmic}
+% \usepackage[chapter]{algorithm}
+% \usepackage{algorithmic}
+% \input{spanishAlgorithmic}
+\usepackage[ruled,vlined,lined,linesnumbered,algosection,spanish]{algorithm2e}
 \usepackage{tocbibind}
 \spanishdecimal{.}
 \usepackage{cmbright}
@@ -110,16 +112,16 @@
 \pagenumbering{arabic}
 \input{intro}
 %\input{cap1}
-%\input{cap2}
-%\input{cap3}
-%\input{cap4}
-\input{conclu}
+\input{cap2}
+\input{cap3}
+\input{cap4}
+\input{Conclusiones}
 
 
 
 
 \bibliographystyle{ieee}
-\input{referencias}
+\bibliography{bibliografia}
 
 
 
