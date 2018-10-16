@@ -1,0 +1,127 @@
+\documentclass[11pt,titlepage,letterpaper]{book}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{anysize}
+\usepackage{graphicx}
+\usepackage[nottoc]{tocbibind}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{tabulary}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{color,soul}
+\usepackage{amsfonts}
+\usepackage{dot2texi}
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{cor}{Corolario}[chapter]
+\newtheorem{lema}{Lema}[chapter]
+\newtheorem{Ex}{Ejemplo}
+\newtheorem{Defi}{Definición}[chapter]
+\newtheorem{obs}{Observación}[chapter]
+\newtheorem{Restriccion}{Restricción}
+\newtheorem{Problema}{Problema}
+\newtheorem{dem}{Demostracion}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+\input{spanishAlgorithmic}
+\usepackage{tocbibind}
+\spanishdecimal{.}
+\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+
+\newcounter{mycount}
+% definition of the command
+\newcommand\myprob[3]{%
+  \stepcounter{mycount}
+  \par\noindent {\textbf{Problema: }}
+   #1 \\
+  {\bfseries Entrada}: #2\\
+  {\bfseries Salida}: #3 \\
+}
+\newcommand{\demo}{\noindent  {\it Demost\emph{\textbf{}}ración. }}
+
+ 
+
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+\titleformat{\chapter}[display] % cambiamos el formato de los capítulos
+{\bfseries\Huge} % por defecto se usarón caracteres de tamaño \Huge en negrita
+{% contenido de la etiqueta
+ \titlerule % lnea horizontal
+ \filleft % texto alineado a la derecha
+ \Large\chaptertitlename\ % "Capítulo" o "Apéndice" en tamaño \Large en lugar de \Huge
+ \Large\thechapter} % número de capítulo en tamaño \Large
+{0mm} % espacio minimo entre etiqueta y cuerpo
+{\filleft} % texto del cuerpo alineado a la derecha
+[\vspace{0.5mm} \bigrule] % despues del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark} % En las pginas impares, parte izquierda del encabezado, aparecer el nombre de capítulo
+\fancyhead[RE]{\rightmark} % En las pginas pares, parte derecha del encabezado, aparecer el nombre de sección
+\fancyhead[RO,LE]{\thepage} % Nmeros de pagina en las esquinas de los encabezados
+
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter. #1}}{}} % Formato para el capítulo: N. Nombre
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}} % Formato para la sección: N.M. Nombre
+
+\renewcommand{\headrulewidth}{0.6pt} % Ancho de la lnea horizontal bajo el encabezado
+\renewcommand{\footrulewidth}{0.6pt} % Ancho de la lnea horizontal sobre el pie (que en este ejemplo est vaco)
+\setlength{\headheight}{1.5\headheight} % Aumenta la altura del encabezado en una vez y media
+
+
+
+
+
+
+
+\definecolor{black}{rgb}{0,0,0}
+\setulcolor{black}
+
+
+\title{\textbf{Problema del agente viajero con objetivos móviles}}
+\author{Idónea Comunicación de Resultados para obtener el grado de \\ Maestro en Ciencias\\ por \\\\Alumno}
+\date{\today}
+
+
+\begin{document}
+   \def\contentsname{Contenido}
+   \def\listfigurename{Lista de Figuras}
+  \def\listtablename{Lista de Tablas} 
+   \def\bibname{Bibliografía}
+
+
+\input{portada}
+\thispagestyle{empty}
+\newpage
+\pagenumbering{roman}
+\input{dedicatoria}
+\input{agradecimientos}
+\input{resumen}
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+\listofalgorithms
+%\newpage
+%\thispagestyle{empty}
+%\newpage
+
+\pagenumbering{arabic}
+\input{intro}
+%\input{cap1}
+%\input{cap2}
+%\input{cap3}
+%\input{cap4}
+\input{conclu}
+
+
+
+
+\bibliographystyle{ieee}
+\input{referencias}
+
+
+
+
+\end{document}
